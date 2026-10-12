@@ -22,7 +22,6 @@ export const profile = {
   },
   quote: { en: "I enjoy understanding complex problems and figuring out how to make things work better.", es: "Me gusta entender problemas complejos y encontrar cómo hacer que las cosas funcionen mejor." },
   education: [
-    { title: { en: "MBA", es: "MBA" }, detail: { en: "In progress", es: "En curso" } },
     { title: { en: "Master in UX/UI Design", es: "Máster en Diseño UX/UI" }, detail: { en: "Nuclio Digital School · Barcelona, Spain", es: "Nuclio Digital School · Barcelona, España" } },
     { title: { en: "Bachelor’s Degree in Business Administration", es: "Licenciatura en Administración de Empresas" }, detail: { en: "Business & management", es: "Negocios y gestión" } },
     { title: { en: "Management Planning / Business Management Technical Degree", es: "Tecnicatura en Planificación y Gestión Empresarial" }, detail: { en: "Management foundation", es: "Bases de gestión" } },
