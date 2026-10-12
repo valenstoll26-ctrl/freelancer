@@ -9,7 +9,7 @@ export const profile = {
       "I studied Business Administration and later specialized in UX/UI and digital products, while building my career across Argentina, Spain, the United States and international teams.",
       "I’ve managed a family business, led operations for financial services companies, coordinated professional associations and events, worked on digital products, redesigned processes and helped turn complex ideas into practical systems.",
       "I naturally connect business needs, people, processes and technology. Sometimes the answer is a better process. Sometimes it’s a dashboard, a product or a new service. Sometimes it’s simply creating clarity where there wasn’t any.",
-      "Today I work independently with founders, companies and organizations that need a strategic partner who can both think and execute.",
+      "My independent experience focuses on financial planning and complements my background in business, operations and strategic projects.",
     ],
     es: [
       "Soy profesional de negocios, estratega y solucionadora de problemas, con más de siete años de experiencia trabajando en gestión empresarial, operaciones, dirección de proyectos, productos digitales y organizaciones internacionales.",
@@ -17,11 +17,10 @@ export const profile = {
       "Estudié Administración de Empresas y luego me especialicé en UX/UI y productos digitales, mientras desarrollaba mi carrera entre Argentina, España, Estados Unidos y equipos internacionales.",
       "Gestioné una empresa familiar, lideré operaciones para empresas de servicios financieros, coordiné asociaciones profesionales y eventos, participé en productos digitales, rediseñé procesos y ayudé a convertir ideas complejas en sistemas concretos.",
       "Conecto naturalmente necesidades de negocio, personas, procesos y tecnología. A veces la solución es un mejor proceso, un dashboard, un producto o un nuevo servicio. Y a veces es simplemente traer claridad donde antes había caos.",
-      "Hoy trabajo de forma independiente con founders, empresas y organizaciones que necesitan una socia estratégica capaz de pensar y ejecutar.",
+      "Mi experiencia independiente se centra en la planeación financiera y complementa mi trayectoria en negocios, operaciones y proyectos estratégicos.",
     ],
   },
   quote: { en: "I enjoy understanding complex problems and figuring out how to make things work better.", es: "Me gusta entender problemas complejos y encontrar cómo hacer que las cosas funcionen mejor." },
-  affiliation: { en: "Part of the CPF leadership board.", es: "Integrante de la directiva de CPF." },
   education: [
     { title: { en: "MBA", es: "MBA" }, detail: { en: "In progress", es: "En curso" } },
     { title: { en: "Master in UX/UI Design", es: "Máster en Diseño UX/UI" }, detail: { en: "Nuclio Digital School · Barcelona, Spain", es: "Nuclio Digital School · Barcelona, España" } },

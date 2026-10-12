@@ -68,11 +68,15 @@ for (const locale of ["en", "es"]) {
 test("unknown locales, untranslated paths and missing projects return 404", async () => {
   for (const path of ["/fr", "/es/services", "/en/trabajos", "/es/trabajos/not-a-project"]) assert.equal((await fetch(`${base}${path}`)).status, 404);
 });
-test("family-office scope and CPF involvement are explicit", async () => {
+test("family-office scope and updated independent experience are explicit", async () => {
   const services = await (await fetch(`${base}/es/servicios`)).text();
   assert.match(services, /no incluye asesoramiento de inversión, legal, impositivo ni financiero regulado/);
   const about = await (await fetch(`${base}/es/sobre-mi`)).text();
-  assert.match(about, /directiva de CPF/);
+  assert.match(about, /planeación financiera/);
+  assert.doesNotMatch(about, /directiva de CPF/);
+  const englishAbout = await (await fetch(`${base}/en/about`)).text();
+  assert.match(englishAbout, /Independent experience · financial planning/);
+  assert.doesNotMatch(englishAbout, /CPF leadership board/);
   assert.match(about, /Valman SRL/);
   assert.match(about, /Nuclio Digital School/);
 });
