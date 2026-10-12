@@ -85,7 +85,7 @@ These values are public; rebuild after changes. Update `site.whatsappDisplay` to
 
 ## Vercel preview
 
-Review URL: **https://valentina-stoll-preview.vercel.app**. Project: `valentina-stoll`; authorized team: `valentina-2e4e`. Preview protection uses Vercel Authentication: open while signed into the project owner's account. GitHub automatic deployments are not connected.
+Review URL: **https://valentina-stoll-preview.vercel.app**. Project: `valentina-stoll`; authorized team: `valentina-2e4e`. Vercel Authentication protection has been disabled for this public portfolio so visitors do not need an account. GitHub automatic deployments are not connected.
 
 `vercel.json` selects Next.js, frozen installation with `npm ci` and `npm run build`. With an authenticated CLI, an authorized preview update is:
 
@@ -104,6 +104,6 @@ The project's verified production domain is https://valentina-stoll.vercel.app. 
 vercel deploy --prod --yes --project valentina-stoll --scope valentina-2e4e --build-env NEXT_PUBLIC_SITE_URL=https://valentina-stoll.vercel.app
 ```
 
-Production must be accessible without Vercel authentication before sharing. Preview protection is separate. Website source is committed to the GitHub repository; automatic GitHub deployments are not configured.
+Production must be accessible without Vercel authentication before sharing. Website source is committed to the GitHub repository; automatic GitHub deployments are not configured.
 
 Cloud environment configuration is separate from website deployment. Saving install/start instructions does not execute or publish them.
