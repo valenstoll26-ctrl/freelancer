@@ -61,13 +61,13 @@ Automatic delivery would require a separate server endpoint and configured email
 
 ## Real portrait photos
 
-The hero and biography intentionally use SVG monograms, not artificial portraits. To replace them:
+The hero and biography use Valentina's supplied event portrait at `public/images/valentina-portrait.jpg`. The original file is preserved without appearance changes; CSS handles responsive framing and Next Image handles delivery optimization. To use different photographs for each section:
 
 1. Add optimized photos at `public/images/valentina-hero.jpg` and `public/images/valentina-about.jpg`.
 2. Change `site.images.hero` and `site.images.about` in `config/site.ts` to `/images/valentina-hero.jpg` and `/images/valentina-about.jpg`.
 3. Set `site.images.hasPortraits` to `true`; translated captions/alternative text update accordingly.
 
-Use portrait crops with the face visible. The SVG files remain usable until photos are supplied.
+Use portrait crops with the face visible. The old SVG monograms remain available as optional fallbacks.
 
 ## Public configuration and SEO
 

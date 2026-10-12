@@ -7,6 +7,6 @@ export const site = {
   whatsappDisplay: "+54 351 327 1655",
   url: process.env.NEXT_PUBLIC_SITE_URL || (process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` : ""),
   showPrices: false,
-  images: { hero: "/images/valentina-hero.svg", about: "/images/valentina-about.svg", hasPortraits: false },
+  images: { hero: "/images/valentina-portrait.jpg", about: "/images/valentina-portrait.jpg", hasPortraits: true },
   keywords: ["Business Solutions Consultant", "Business Designer", "Business Consultant", "Process Consultant", "Automation Consultant", "No-Code Consultant", "Fractional COO", "Fractional Operations", "Digital Product Consultant", "UX Consultant", "Family Office Operations", "Family Business Consultant", "Program Manager", "Event Program Manager", "Project Management Consultant", "LATAM Consultant", "US Business Consultant"],
 };
