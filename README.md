@@ -57,6 +57,8 @@ There are no public prices, fabricated testimonials, client logos, revenue metri
 
 WhatsApp uses +54 351 327 1655; email, LinkedIn and Calendly use Valentina's supplied details. The bilingual form validates required fields, includes a honeypot, shows errors/preparing state and generates an encoded **email draft**. Visitors open and send it through their email application. It does not send automatically, store enquiries or claim delivery. Direct WhatsApp is available without an email application.
 
+Each service has a WhatsApp invitation with its localized service name in the prepared message. Individual cases use a message naming the project; the career journey includes its own invitation. WhatsApp is the primary action, with a 30-minute Calendly conversation as the alternative. A fixed WhatsApp link is available on all localized pages and hides while another WhatsApp action or the footer is visible, avoiding overlap and duplicate invitations. These links only prepare conversations; visitors send their own messages. CTA copy is editable in the `cta` translation group, and shared components live in `src/components/contact-cta.tsx` with URL encoding in `src/lib/whatsapp.ts`.
+
 Automatic delivery would require a separate server endpoint and configured email provider. No such backend or secret is currently required; never expose provider credentials in public variables.
 
 ## Real portrait photos

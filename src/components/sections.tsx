@@ -4,11 +4,12 @@ import { profile } from "@/content/profile";
 import { services, type Service } from "@/content/services";
 import { timeline } from "@/content/timeline";
 import { getMessages, pathFor, type Locale, type PageKey } from "@/lib/i18n";
-import { Arrow, BookingLink, SectionHeading, SectionLabel, CapabilityTags, QuoteBlock } from "./ui";
+import { Arrow, BookingLink, WhatsAppLink, SectionHeading, SectionLabel, CapabilityTags, QuoteBlock } from "./ui";
 import { Portrait } from "./portrait";
 import { ProjectGallery } from "./project-gallery";
 import { ContactForm } from "./contact-form";
 import { MicroReveal } from "./micro-reveal";
+import { ContactCTA } from "./contact-cta";
 
 export function Hero({ locale }: { locale: Locale }) {
   const t = getMessages(locale);
@@ -23,7 +24,7 @@ export function IntroSection({ locale }: { locale: Locale }) {
 }
 export function ServiceDetail({ service, locale, index, full = false }: { service: Service; locale: Locale; index: number; full?: boolean }) {
   const t = getMessages(locale);
-  return <article className={`service-row ${full ? "full-service" : ""}`} id={full ? service.id : undefined}><span className="row-number">{String(index + 1).padStart(2, "0")}</span><h3>{service.title[locale]}</h3><div><p>{service.description[locale]}</p>{full ? <><h4 className="service-subheading">{t.services.includes}</h4><ul className="service-includes">{service.includes[locale].map(item => <li key={item}>{item}</li>)}</ul><h4 className="service-subheading">{t.services.fit}</h4><p>{service.fit[locale]}</p></> : <CapabilityTags items={service.includes[locale].slice(0, 3)} />}{service.disclaimer && <p className="service-disclaimer">{service.disclaimer[locale]}</p>}{!full && <Link className="text-link service-detail-link" href={`${pathFor(locale, "services")}#${service.id}`}>{t.services.details}<Arrow diagonal /></Link>}</div></article>;
+  return <article className={`service-row ${full ? "full-service" : ""}`} id={full ? service.id : undefined}><span className="row-number">{String(index + 1).padStart(2, "0")}</span><h3>{service.title[locale]}</h3><div><p>{service.description[locale]}</p>{full ? <><h4 className="service-subheading">{t.services.includes}</h4><ul className="service-includes">{service.includes[locale].map(item => <li key={item}>{item}</li>)}</ul><h4 className="service-subheading">{t.services.fit}</h4><p>{service.fit[locale]}</p></> : <CapabilityTags items={service.includes[locale].slice(0, 3)} />}{service.disclaimer && <p className="service-disclaimer">{service.disclaimer[locale]}</p>}<div className="service-actions">{!full && <Link className="text-link service-detail-link" href={`${pathFor(locale, "services")}#${service.id}`}>{t.services.details}<Arrow diagonal /></Link>}<WhatsAppLink locale={locale} className="text-link service-contact-link" label={t.cta.service} accessibleLabel={`${t.cta.service}: ${service.title[locale]}`} message={t.cta.serviceMessage.replace("{service}", service.title[locale])} /></div></div></article>;
 }
 export function ServiceSection({ locale, full = false }: { locale: Locale; full?: boolean }) {
   const t = getMessages(locale).services;
@@ -40,7 +41,7 @@ export function AboutSection({ locale, full = false }: { locale: Locale; full?: 
 }
 export function CareerTimeline({ locale }: { locale: Locale }) {
   const t = getMessages(locale).timeline;
-  return <section id="journey" className="section section-sand" data-reveal><div className="container timeline-layout"><div><SectionLabel>{t.label}</SectionLabel><h2>{t.title}</h2><p className="lead journey-intro">{t.intro}</p></div><ol className="journey-timeline">{timeline.map((item, index) => <li key={item.id}><span className="eyebrow">{item.year || `${t.chapter} ${String(index + 1).padStart(2, "0")}`}</span><h3>{item.title[locale]}</h3><p>{item.description[locale]}</p></li>)}</ol></div></section>;
+  return <section id="journey" className="section section-sand" data-reveal><div className="container timeline-layout"><div><SectionLabel>{t.label}</SectionLabel><h2>{t.title}</h2><p className="lead journey-intro">{t.intro}</p></div><ol className="journey-timeline">{timeline.map((item, index) => <li key={item.id}><span className="eyebrow">{item.year || `${t.chapter} ${String(index + 1).padStart(2, "0")}`}</span><h3>{item.title[locale]}</h3><p>{item.description[locale]}</p></li>)}</ol></div><div className="container journey-follow-up"><ContactCTA locale={locale} variant="journey" /></div></section>;
 }
 export function EducationSection({ locale }: { locale: Locale }) {
   const t = getMessages(locale).about;
@@ -64,12 +65,12 @@ export function EngagementsSection({ locale }: { locale: Locale }) {
 }
 export function FinalCTA({ locale }: { locale: Locale }) {
   const t = getMessages(locale).final;
-  return <section className="section section-dark final-cta" data-reveal><div className="container"><SectionLabel light>{t.label}</SectionLabel><h2>{t.title}</h2><p className="lead">{t.description}</p><div className="hero-actions"><Link href={pathFor(locale, "contact")} className="button button-cream">{t.cta}<Arrow /></Link></div><span className="cta-mark" aria-hidden="true">vs.</span></div></section>;
+  return <section className="section section-dark final-cta" data-reveal><div className="container"><SectionLabel light>{t.label}</SectionLabel><h2>{t.title}</h2><p className="lead">{t.description}</p><div className="hero-actions"><WhatsAppLink locale={locale} className="button button-cream" label={t.cta} /><BookingLink locale={locale} className="text-link" label={getMessages(locale).cta.book} /></div><span className="cta-mark" aria-hidden="true">vs.</span></div></section>;
 }
 export function ContactSection({ locale }: { locale: Locale }) {
   const t = getMessages(locale).contact;
   const whatsapp = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(t.whatsappMessage)}`;
-  return <section className="section container contact-page"><div className="contact-page-heading"><SectionLabel>{t.label}</SectionLabel><h1>{t.title}</h1><p className="lead">{t.description}</p><div className="hero-actions"><BookingLink locale={locale} /><a href={whatsapp} target="_blank" rel="noopener noreferrer" className="text-link">{t.message}<Arrow diagonal /></a></div></div><div className="contact-section"><aside className="contact-details"><h2>{t.direct}</h2><a href={`mailto:${site.email}`} className="contact-email text-link">{site.email}<Arrow diagonal /></a><a href={site.linkedin} className="text-link" target="_blank" rel="noopener noreferrer">LinkedIn<Arrow diagonal /></a><a href={whatsapp} className="button button-outline" target="_blank" rel="noopener noreferrer">{t.whatsapp}<Arrow diagonal /></a><span className="whatsapp-number">{site.whatsappDisplay}</span><p className="contact-note">{profile.availability[locale]}</p></aside><ContactForm key={locale} locale={locale} /></div></section>;
+  return <section className="section container contact-page"><div className="contact-page-heading"><SectionLabel>{t.label}</SectionLabel><h1>{t.title}</h1><p className="lead">{t.description}</p><div className="hero-actions"><WhatsAppLink locale={locale} /><BookingLink locale={locale} className="text-link" label={getMessages(locale).cta.book} /></div></div><div className="contact-section"><aside className="contact-details"><h2>{t.direct}</h2><a href={`mailto:${site.email}`} className="contact-email text-link">{site.email}<Arrow diagonal /></a><a href={site.linkedin} className="text-link" target="_blank" rel="noopener noreferrer">LinkedIn<Arrow diagonal /></a><a href={whatsapp} className="button button-outline" target="_blank" rel="noopener noreferrer">{t.whatsapp}<Arrow diagonal /></a><span className="whatsapp-number">{site.whatsappDisplay}</span><p className="contact-note">{profile.availability[locale]}</p></aside><ContactForm key={locale} locale={locale} /></div></section>;
 }
 export function Footer({ locale }: { locale: Locale }) {
   const t = getMessages(locale);

@@ -530,3 +530,25 @@ a:hover .arrow { transform: translate(3px, 0); }
   .portfolio-hero h1 { font-size: 45px; }
   .form-row, .five-steps { grid-template-columns: 1fr; }
 }
+
+/* Contextual invitations: direct message first, booking as an alternative. */
+.service-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; margin-top: 20px; }
+.service-actions .service-detail-link { margin-top: 0; }
+.service-contact-link { color: var(--clay); line-height: 1.5; }
+.contextual-cta { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding-block: 35px; display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 30px 50px; }
+.contextual-cta h2 { font-size: clamp(30px, 3vw, 40px); max-width: 470px; }
+.contextual-cta p { margin-top: 15px; color: var(--muted); font-size: 13px; max-width: 440px; }
+.cta-actions { display: flex; flex-direction: column; align-items: flex-start; gap: 18px; }
+.cta-actions .text-link { font-size: 12px; line-height: 1.6; }
+.journey-follow-up { margin-top: 65px; }
+.case-follow-up { margin-bottom: 80px; }
+.floating-whatsapp { position: fixed; z-index: 40; right: max(24px, env(safe-area-inset-right)); bottom: calc(24px + env(safe-area-inset-bottom)); display: inline-flex; align-items: center; gap: 10px; min-height: 48px; padding: 12px 18px; border-radius: 30px; background: var(--ink); color: var(--ivory); border: 1px solid var(--ivory); box-shadow: 0 4px 18px rgb(40 44 38 / 15%); font-size: 12px; transition: background .2s; }
+.floating-whatsapp:hover { background: var(--clay); }
+.floating-whatsapp[hidden] { display: none; }
+.footer { padding-bottom: calc(104px + env(safe-area-inset-bottom)); }
+@media (max-width: 700px) {
+  .contextual-cta { grid-template-columns: 1fr; gap: 25px; padding-block: 28px; }
+  .journey-follow-up { margin-top: 40px; }
+  .case-follow-up { margin-bottom: 55px; }
+  .floating-whatsapp { right: max(16px, env(safe-area-inset-right)); bottom: calc(16px + env(safe-area-inset-bottom)); }
+}
