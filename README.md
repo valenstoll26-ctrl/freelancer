@@ -4,7 +4,7 @@ Premium bilingual portfolio using Next.js App Router, TypeScript, React, Tailwin
 
 Interactive details include animated project filtering, a five-stage process explorer with keyboard-accessible tabs, restrained hover feedback and a thin reading-progress line. Process details are editable under `process` in both translation dictionaries. Reduced motion disables positional transitions and hides the decorative progress line; all navigation and process interactions remain usable.
 
-Reading text is enlarged across services, biography, cases, forms and navigation. The homepage also includes a lightweight SVG motion sequence showing scattered pieces becoming a connected system. It plays once when visible, offers pause/replay and three selectable scenes, pauses progression outside the viewport, and does not autoplay with reduced motion. It is a conceptual animation rather than client footage. Its localized copy is under `story`, and the component is `src/components/solution-story.tsx`.
+Reading text is enlarged across services, biography, cases, forms and navigation. The homepage also includes a lightweight SVG motion sequence showing scattered pieces becoming a connected system. It loops automatically while visible, keeps three selectable scenes without playback/restart buttons, pauses outside the viewport or in a background tab, and does not autoplay with reduced motion. Focusing a scene selector pauses the loop for inspection; moving focus away resumes it. It is a conceptual animation rather than client footage. Its localized copy is under `story`, and the component is `src/components/solution-story.tsx`.
 
 ## Development
 
