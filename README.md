@@ -2,6 +2,8 @@
 
 Premium bilingual portfolio using Next.js App Router, TypeScript, React, Tailwind CSS and subtle Framer Motion animation. English is the default; both languages share layouts and components. Ivory, sand, charcoal and terracotta; locally hosted Instrument Serif / DM Sans fonts; reduced-motion support.
 
+Interactive details include animated project filtering, a five-stage process explorer with keyboard-accessible tabs, restrained hover feedback and a thin reading-progress line. Process details are editable under `process` in both translation dictionaries. Reduced motion disables positional transitions and hides the decorative progress line; all navigation and process interactions remain usable.
+
 ## Development
 
 Requires Node.js 20.9+ and npm; verified with Node 24.19 / npm 11.9.

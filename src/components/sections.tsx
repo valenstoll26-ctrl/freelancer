@@ -8,7 +8,7 @@ import { Arrow, BookingLink, WhatsAppLink, SectionHeading, SectionLabel, Capabil
 import { Portrait } from "./portrait";
 import { ProjectGallery } from "./project-gallery";
 import { ContactForm } from "./contact-form";
-import { MicroReveal } from "./micro-reveal";
+import { ProcessExplorer } from "./process-explorer";
 import { ContactCTA } from "./contact-cta";
 
 export function Hero({ locale }: { locale: Locale }) {
@@ -49,7 +49,7 @@ export function EducationSection({ locale }: { locale: Locale }) {
 }
 export function ProcessSection({ locale }: { locale: Locale }) {
   const t = getMessages(locale).process;
-  return <section className="section container" data-reveal><SectionLabel>{t.label}</SectionLabel><h2 className="max-title">{t.title}</h2><MicroReveal><div className="approach-grid five-steps">{t.steps.map((step, index) => <article key={step.title}><span className="step-number">0{index + 1}</span><h3>{step.title}</h3><p>{step.description}</p></article>)}</div></MicroReveal></section>;
+  return <section className="section container" data-reveal><SectionLabel>{t.label}</SectionLabel><h2 className="max-title">{t.title}</h2><ProcessExplorer locale={locale} /></section>;
 }
 export function ValuesSection({ locale }: { locale: Locale }) {
   const t = getMessages(locale).values;

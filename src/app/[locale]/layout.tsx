@@ -9,6 +9,7 @@ import "../globals.css";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/sections";
 import { RevealObserver } from "@/components/reveal";
+import { ReadingProgress } from "@/components/reading-progress";
 import { FloatingWhatsApp } from "@/components/floating-whatsapp";
 import { locales, hasLocale, getMessages } from "@/lib/i18n";
 import { site } from "@/config/site";
@@ -26,5 +27,5 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 export default async function LocaleLayout({ children, params }: { children: React.ReactNode; params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   if (!hasLocale(locale)) notFound();
-  return <html lang={locale}><body id="top"><a href="#main" className="skip-link">{getMessages(locale).nav.skip}</a><Header locale={locale} /><main id="main">{children}</main><Footer locale={locale} /><FloatingWhatsApp locale={locale} /><RevealObserver /></body></html>;
+  return <html lang={locale}><body id="top"><ReadingProgress /><a href="#main" className="skip-link">{getMessages(locale).nav.skip}</a><Header locale={locale} /><main id="main">{children}</main><Footer locale={locale} /><FloatingWhatsApp locale={locale} /><RevealObserver /></body></html>;
 }
