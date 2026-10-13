@@ -10,6 +10,7 @@ import { ProjectGallery } from "./project-gallery";
 import { ContactForm } from "./contact-form";
 import { ProcessExplorer } from "./process-explorer";
 import { ContactCTA } from "./contact-cta";
+import { SolutionStory } from "./solution-story";
 
 export function Hero({ locale }: { locale: Locale }) {
   const t = getMessages(locale);
@@ -20,7 +21,7 @@ export function CredibilityStrip({ locale }: { locale: Locale }) {
 }
 export function IntroSection({ locale }: { locale: Locale }) {
   const t = getMessages(locale).intro;
-  return <section className="section container split-section" data-reveal><div><SectionLabel>{t.label}</SectionLabel><h2>{t.title}</h2></div><div className="intro-copy">{t.paragraphs.map(text => <p className="lead" key={text}>{text}</p>)}<QuoteBlock>{t.quote}</QuoteBlock></div></section>;
+  return <section className="section container split-section" data-reveal><div><SectionLabel>{t.label}</SectionLabel><h2>{t.title}</h2></div><div className="intro-copy">{t.paragraphs.map(text => <p className="lead" key={text}>{text}</p>)}<QuoteBlock>{t.quote}</QuoteBlock></div><SolutionStory locale={locale} /></section>;
 }
 export function ServiceDetail({ service, locale, index, full = false }: { service: Service; locale: Locale; index: number; full?: boolean }) {
   const t = getMessages(locale);

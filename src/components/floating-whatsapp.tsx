@@ -20,7 +20,7 @@ export function FloatingWhatsApp({ locale }: { locale: Locale }) {
       }
       setAlternativeVisible(visible.size > 0);
     }, { rootMargin: "-90px 0px 0px 0px" });
-    document.querySelectorAll('a[href^="https://wa.me/"]:not(.floating-whatsapp), footer').forEach(element => observer.observe(element));
+    document.querySelectorAll('a[href^="https://wa.me/"]:not(.floating-whatsapp), footer, form, .story-controls, .process-tabs').forEach(element => observer.observe(element));
     return () => observer.disconnect();
   }, [pathname]);
 

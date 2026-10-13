@@ -4,6 +4,8 @@ Premium bilingual portfolio using Next.js App Router, TypeScript, React, Tailwin
 
 Interactive details include animated project filtering, a five-stage process explorer with keyboard-accessible tabs, restrained hover feedback and a thin reading-progress line. Process details are editable under `process` in both translation dictionaries. Reduced motion disables positional transitions and hides the decorative progress line; all navigation and process interactions remain usable.
 
+Reading text is enlarged across services, biography, cases, forms and navigation. The homepage also includes a lightweight SVG motion sequence showing scattered pieces becoming a connected system. It plays once when visible, offers pause/replay and three selectable scenes, pauses progression outside the viewport, and does not autoplay with reduced motion. It is a conceptual animation rather than client footage. Its localized copy is under `story`, and the component is `src/components/solution-story.tsx`.
+
 ## Development
 
 Requires Node.js 20.9+ and npm; verified with Node 24.19 / npm 11.9.
@@ -59,7 +61,7 @@ There are no public prices, fabricated testimonials, client logos, revenue metri
 
 WhatsApp uses +54 351 327 1655; email, LinkedIn and Calendly use Valentina's supplied details. The bilingual form validates required fields, includes a honeypot, shows errors/preparing state and generates an encoded **email draft**. Visitors open and send it through their email application. It does not send automatically, store enquiries or claim delivery. Direct WhatsApp is available without an email application.
 
-Each service has a WhatsApp invitation with its localized service name in the prepared message. Individual cases use a message naming the project; the career journey includes its own invitation. WhatsApp is the primary action, with a 30-minute Calendly conversation as the alternative. A fixed WhatsApp link is available on all localized pages and hides while another WhatsApp action or the footer is visible, avoiding overlap and duplicate invitations. These links only prepare conversations; visitors send their own messages. CTA copy is editable in the `cta` translation group, and shared components live in `src/components/contact-cta.tsx` with URL encoding in `src/lib/whatsapp.ts`.
+Each service has a WhatsApp invitation with its localized service name in the prepared message. Individual cases use a message naming the project; the career journey includes its own invitation. WhatsApp is the primary action, with a 30-minute Calendly conversation as the alternative. A fixed WhatsApp link is available on all localized pages and hides while another WhatsApp action, form, interactive controls or the footer is visible, avoiding overlap and duplicate invitations. These links only prepare conversations; visitors send their own messages. CTA copy is editable in the `cta` translation group, and shared components live in `src/components/contact-cta.tsx` with URL encoding in `src/lib/whatsapp.ts`.
 
 Automatic delivery would require a separate server endpoint and configured email provider. No such backend or secret is currently required; never expose provider credentials in public variables.
 
