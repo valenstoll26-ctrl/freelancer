@@ -67,7 +67,7 @@ Automatic delivery would require a separate server endpoint and configured email
 
 ## Real portrait photos
 
-The hero and biography use Valentina's supplied event portrait at `public/images/valentina-portrait.jpg`. The original file is preserved without appearance changes; CSS handles responsive framing and Next Image handles delivery optimization. To use different photographs for each section:
+The hero and biography use the background-removed portrait at `public/images/valentina-portrait-clean.png`, edited from Valentina's supplied event photograph. The original remains at `public/images/valentina-portrait.jpg`. The transparent version removes the branded backdrop; the lanyard and badge remain. CSS handles responsive framing and Next Image handles delivery optimization. To use different photographs for each section:
 
 1. Add optimized photos at `public/images/valentina-hero.jpg` and `public/images/valentina-about.jpg`.
 2. Change `site.images.hero` and `site.images.about` in `config/site.ts` to `/images/valentina-hero.jpg` and `/images/valentina-about.jpg`.
